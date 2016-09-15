@@ -25,7 +25,7 @@ background: #FF4E50; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #FF4E50 , #F9D423); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    @media screen and (max-width: 120px) {
+    @media screen and (max-width: 640px) {
         height: 120vh;
         width: 100%;
     }
@@ -42,7 +42,7 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         margin: 90px 0;
         letter-spacing: 2px;
 
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 1200px) {
             margin: 20px 0;
             width: 90%;
         }
@@ -57,7 +57,7 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         font-weight: 400;
         font-size: 28px;
 
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 1200px) {
             margin: 20px 0;
             width: 90%;
         }
@@ -92,7 +92,8 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
     font-family: 'bariol_regularregular';
 
     img {
-        width: 120px;
+        width: 120px !important;
+        height: 120px !important;
         margin-right: 30px;
         margin-left: 50px;
 
