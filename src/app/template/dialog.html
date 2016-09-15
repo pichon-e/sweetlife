@@ -9,6 +9,9 @@
           <md-option ng-value="opt" ng-repeat="opt in article.body_parts">{{ opt }}</md-option>
         </md-select>
         <md-button class="md-raised md-primary" ng-click="click()">Acheter</md-button>
-        <p ng-if="hide">Commande confirmé</p>
+        <div ng-if="hide">
+            <p>Commande confirmée</p>
+            <md-button ng-click="close()" class="md-raised">Revenir à la page</md-button>
+        </div>
     </div>
 </md-dialog>
