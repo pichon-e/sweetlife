@@ -111,7 +111,7 @@
         sexe: "femme"
       },
       {
-        title: "Gérard 53 ans",
+        title: "Gérard 73 ans",
         picture: "assets/images/6.jpg",
         facebook_mark: 1,
         instagram_mark: 1,

@@ -7,53 +7,53 @@
         md-whiteframe="4"
         hide-gt-sm>
         <md-content layout-padding>
-            <h2 layout="row" layout-align="center center" class="title">
+            <div layout="row" layout-align="center center" class="title">
                 <img src="assets/images/2.png">
                 <p>Filtrer avec le rang de leur réseau</p>
-            </h2>
+            </div>
             <div layout="row" layout-align="start center" id="sexe">
                 <div flex="50" class="button-male" ng-click="selectSexe('homme')" ng-class="{selected: sexe == 'homme'}">Homme</div>
                 <div flex="50" class="button-female" ng-click="selectSexe('femme')" ng-class="{selected: sexe == 'femme'}">Femme</div>
             </div>
             <div layout="row" layout-align="start center" class="facebook">
                 <img src="assets/images/Facebook.png">
-                <p>Facebook minimum rate</p>
+                <p>Facebook ranking</p>
             </div>
             <md-slider md-discrete id="facebook" ng-model="facebook" step="1" min="0" max="5"></md-slider>
 
             <div layout="row" layout-align="start center" class="facebook">
                 <img src="assets/images/Instgram.png">
-                <p>Instagram minimum rate</p>
+                <p>Instagram ranking</p>
             </div>
             <md-slider md-discrete id="instagram" ng-model="instagram" step="1" min="0" max="5"></md-slider>
 
             <div layout="row"  layout-align="start center" class="facebook">
                 <img src="assets/images/Linked-in.png">
-                <p>Linkedin minimum rate</p>
+                <p>Linkedin ranking</p>
             </div>
             <md-slider id="linkedin" md-discrete ng-model="linkedin" step="1" min="0" max="5"></md-slider>
 
             <div layout="row"  layout-align="start center" class="facebook">
                 <img src="assets/images/Food.png">
-                <p>Food minimum rate</p>
+                <p>Alimentation ranking</p>
             </div>
             <md-slider id="food" md-discrete ng-model="food" step="1" min="0" max="5"></md-slider>
 
             <div layout="row"  layout-align="start center" class="facebook">
                 <img src="assets/images/Sport.png">
-                <p>Sport minimum rate</p>
+                <p>Santé ranking</p>
             </div>
             <md-slider id="sport" md-discrete ng-model="sport" step="1" min="0" max="5"></md-slider>
 
             <div layout="row" layout-align="start center" class="facebook">
                 <img src="assets/images/Tinder.png">
-                <p>Tinder minimum rate</p>
+                <p>Tinder ranking</p>
             </div>
             <md-slider id="tinder" md-discrete ng-model="tinder" step="1" min="0" max="5"></md-slider>
         </md-content>
     </md-sidenav>
     <div id="filters" flex="20" hide-xs hide-sm hide-md>
-        <h2 layout="row" layout-align="center center" class="title">
+        <h2 layout="column" layout-align="center center" class="title">
             <img src="assets/images/2.png">
             <p>Filtrer avec le rang de leur réseau</p>
         </h2>
@@ -105,10 +105,8 @@
         </h2>
 
         <div layout="row" layout-align="space-around center" id="body-parts" flex="10" layout-wrap>
-            <div ng-repeat="body_part in body_parts" layout="row" layout-align="center center"  class="bloc" ng-click="addBodyPart(body_part.name)" ng-class="{selected: selected.indexOf(body_part.name) != -1}" >
-                <div flex-gt-md="15" flex-md="35" flex-sm="40" flex-xs="40" layout="row" layout-align="center center">
+            <div ng-repeat="body_part in body_parts" class="bloc" ng-click="addBodyPart(body_part.name)" ng-class="{selected: selected.indexOf(body_part.name) != -1}" flex-gt-md="30" flex-md="30" flex-sm="40" flex-xs="40" layout="row" layout-align="center center">
                     <img src="{{body_part.icon}}">
-                </div>
             </div>
         </div>
         <div hide-gt-md id="menu" ng-click="toggleLeft()">
@@ -132,7 +130,7 @@
                     linkedin <= article.linkedin_mark &&
                     isSameSexe(article.sexe) &&
                     isInside(article)"
-                flex-gt-md="30" flex-md="45" flex-sm="90" flex-xs="90">
+                flex-gt-md="45" flex-md="45" flex-sm="90" flex-xs="90">
                 <img src="{{article.picture}}">
                 <div ng-if="article.body_parts.length == 1" class="promo">
                     Plus qu'un organe
