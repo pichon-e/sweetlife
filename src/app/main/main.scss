@@ -17,7 +17,7 @@
 }
 
 #carousel {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     font-family: "Open Sans";
 
@@ -36,6 +36,11 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         color: #fafafa;
         margin: 90px 0;
         letter-spacing: 2px;
+
+        @media screen and (max-width: 640px) {
+            margin: 20px 0;
+            width: 90%;
+        }
     }
 
     h2 {
@@ -46,6 +51,11 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         font-style: italic;
         font-weight: 400;
         font-size: 28px;
+
+        @media screen and (max-width: 640px) {
+            margin: 20px 0;
+            width: 90%;
+        }
     }
 
     .button {
@@ -163,6 +173,10 @@ footer {
     .bloc {
         margin-left: 150px;
         margin-bottom: 50px;
+
+        @media screen and (max-width: 640px) {
+            margin-left: 10px;
+        }
     }
 }
 
@@ -174,5 +188,11 @@ footer {
             font-family: 'bariol_regularregular';
             text-align: center;
             color: white;
+    }
+
+    @media screen and (max-width: 640px) {
+        img {
+            width: 80%;
+        }
     }
 }
