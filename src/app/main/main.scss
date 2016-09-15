@@ -41,6 +41,7 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         color: #fafafa;
         margin: 90px 0;
         letter-spacing: 2px;
+        margin-bottom: 20px;
 
         @media screen and (max-width: 1200px) {
             margin: 20px 0;
@@ -55,7 +56,8 @@ background: linear-gradient(to left, #FF4E50 , #F9D423); /* W3C, IE 10+/ Edge, F
         margin: 90px 0;
         font-style: italic;
         font-weight: 400;
-        font-size: 28px;
+        font-size: 26px;
+        margin-top: 20px;
 
         @media screen and (max-width: 1200px) {
             margin: 20px 0;
