@@ -6,7 +6,7 @@
     .controller('ShopController', ShopController);
 
   /** @ngInject */
-  function ShopController($timeout, webDevTec, toastr, $state, $scope, $mdSidenav) {
+  function ShopController($timeout, webDevTec, toastr, $state, $scope, $mdSidenav, $mdDialog) {
     $scope.rate = [1,2,3,4,5];
 
     $scope.facebook = 0;
@@ -36,7 +36,6 @@
     }
 
     $scope.isInside = function(obj) {
-      console.log("selected", obj);
       var test = false;
       if ($scope.selected.length == 0)
         return true;
@@ -59,7 +58,7 @@
         tinder_mark: 2,
         sport_mark: 4,
         food_mark: 3,
-        body_parts: ["liver", "brain"],
+        body_parts: ["foie", "cerveau"],
         sexe: "homme"
       },
       {
@@ -71,7 +70,7 @@
         tinder_mark: 5,
         sport_mark: 2,
         food_mark: 4,
-        body_parts: ["lung"],
+        body_parts: ["poumons"],
         sexe: "femme"
       },
       {
@@ -83,7 +82,7 @@
         tinder_mark: 1,
         sport_mark: 2,
         food_mark: 3,
-        body_parts: ["liver", "brain", "intestine", "lung"],
+        body_parts: ["foie", "cerveau", "intestin", "poumons"],
         sexe: "femme"
       },
       {
@@ -95,7 +94,7 @@
         tinder_mark: 1,
         sport_mark: 2,
         food_mark: 4,
-        body_parts: ["liver", "lung"],
+        body_parts: ["foie", "poumons"],
         sexe: "homme"
       },
       {
@@ -107,7 +106,7 @@
         tinder_mark: 3,
         sport_mark: 2,
         food_mark: 3,
-        body_parts: ["brain", "intestine", "heart"],
+        body_parts: ["cerveau", "intestin", "coeur"],
         sexe: "femme"
       },
       {
@@ -119,7 +118,7 @@
         tinder_mark: 1,
         sport_mark: 2,
         food_mark: 4,
-        body_parts: ["liver", "intestine", "lung", "foot"],
+        body_parts: ["foie", "intestin", "poumons", "pied"],
         sexe: "homme"
       },
       {
@@ -131,7 +130,7 @@
         tinder_mark: 3,
         sport_mark: 2,
         food_mark: 3,
-        body_parts: ["liver", "brain", "intestine", "lung"],
+        body_parts: ["foie", "cerveau", "intestin", "poumons"],
         sexe: "femme"
       },
       {
@@ -143,7 +142,7 @@
         tinder_mark: 2,
         sport_mark: 4,
         food_mark: 3,
-        body_parts: ["liver", "brain", "lung", "heart"],
+        body_parts: ["foie", "cerveau", "poumons", "coeur"],
         sexe: "femme"
       },
       {
@@ -155,7 +154,7 @@
         tinder_mark: 3,
         sport_mark: 4,
         food_mark: 3,
-        body_parts: ["liver", "brain", "intestine", "lung", "foot"],
+        body_parts: ["foie", "cerveau", "intestin", "poumons", "pied"],
         sexe: "homme"
       },
       {
@@ -167,35 +166,35 @@
         tinder_mark: 4,
         sport_mark: 5,
         food_mark: 2,
-        body_parts: ["liver", "lung", "heart", "foot"],
+        body_parts: ["foie", "poumons", "coeur", "pied"],
         sexe: "homme"
       }
     ]
 
     $scope.body_parts = [
       {
-        icon: "assets/images/brain.png",
-        name: "brain"
+        icon: "assets/images/cerveau.png",
+        name: "cerveau"
       },
       {
-        icon: "assets/images/intestine.png",
-        name: "intestine"
+        icon: "assets/images/intestin.png",
+        name: "intestin"
       },
       {
-        icon: "assets/images/lung.png",
-        name: "lung"
+        icon: "assets/images/poumons.png",
+        name: "poumons"
       },
       {
-        icon: "assets/images/liver.png",
-        name: "liver"
+        icon: "assets/images/foie.png",
+        name: "foie"
       },
       {
-        icon: "assets/images/heart.png",
-        name:"heart"
+        icon: "assets/images/coeur.png",
+        name:"coeur"
       },
       {
-        icon: "assets/images/foot.png",
-        name: "foot"
+        icon: "assets/images/pied.png",
+        name: "pied"
       }
     ]
 
@@ -212,6 +211,18 @@
         return true
       else
         return false;
+    }
+
+    $scope.openDialog = function(article) {
+      var confirm = $mdDialog.confirm({
+        templateUrl: 'app/template/dialog.html',
+        controller: 'DialogController',
+        locals: {
+          obj: article
+        }
+      });
+
+      $mdDialog.show(confirm);
     }
   }
 })();

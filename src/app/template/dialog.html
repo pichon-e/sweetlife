@@ -1,0 +1,14 @@
+<md-dialog layout="row" layout-align="center center" layout-wrap>
+    <div flex="100" style="text-align:center; font-size: 25px;">Votre panier</div>
+    <div flex="50">
+        <img src="{{article.picture}}">
+    </div>
+    <div flex="50" style="padding: 10px;" layout="column" layout-align="center center">
+        <label>Sélectionnez l'organe</label>
+        <md-select ng-model="selected"> <!--md-on-close: expression; multiple:boolean; placeholder: string;-->
+          <md-option ng-value="opt" ng-repeat="opt in article.body_parts">{{ opt }}</md-option>
+        </md-select>
+        <md-button class="md-raised md-primary" ng-click="click()">Acheter</md-button>
+        <p ng-if="hide">Commande confirmé</p>
+    </div>
+</md-dialog>
