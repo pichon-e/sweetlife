@@ -104,7 +104,7 @@
             <p>Choisissez un ou plusieurs organes</p>
         </h2>
 
-        <div flex="40" layout="row" layout-align="space-around center" id="body-parts" layout-wrap>
+        <div flex="40" layout="row" layout-align="space-around center" id="body-parts" layout-wrap style="min-height: 40%;">
             <div ng-repeat="body_part in body_parts" class="bloc" ng-click="addBodyPart(body_part.name)" ng-class="{selected: selected.indexOf(body_part.name) != -1}" flex-gt-md="30" flex-md="30" flex-sm="40" flex-xs="40" layout="row" layout-align="center center">
                     <img src="{{body_part.icon}}">
             </div>
